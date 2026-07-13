@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이지 이동 중 - Daily Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9fafb;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --accent-color: #2563eb;
+            --border-color: rgba(0, 0, 0, 0.06);
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .container {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            max-width: 450px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(37, 99, 235, 0.1);
+            border-top: 4px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin: 0 0 0.8rem 0;
+            font-weight: 700;
+        }
+        p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0 0 2rem 0;
+        }
+        .ad-placeholder {
+            border: 1px dashed var(--border-color);
+            background-color: #f9fafb;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+        
+        /* Google AdSense 자동 광고 또는 앵커 광고 코드를 이 페이지 헤더나 본문에 넣어두시면 전면 광고 효과를 극대화할 수 있습니다. */
+    </style>
+    <!-- Google AdSense 자동광고 코드 삽입 위치 (필요 시 주석 제거) -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h2>공식 신청 사이트로 연결 중입니다</h2>
+        <p>보안 연결을 위해 잠시만 대기해 주세요. (약 3초 후 자동 이동)</p>
+        
+        <div class="ad-placeholder">
+            광고 로딩 중...
+        </div>
+    </div>
+
+    <script>
+        // URL에서 target 파라미터 추출
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        const targetUrl = getQueryParam('url');
+        
+        // 실제 이동 처리 (2.5초 대기 후 이동)
+        if (targetUrl) {
+            setTimeout(function() {
+                window.location.replace(decodeURIComponent(targetUrl));
+            }, 2500);
+        } else {
+            // 주소가 없을 경우 메인 페이지로 이동
+            setTimeout(function() {
+                window.location.replace('index.html');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
