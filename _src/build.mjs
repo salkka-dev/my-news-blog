@@ -18,7 +18,7 @@ const SITE = {
   name: "데일리인사이트",
   en: "Daily Insight",
   url: "https://dailyinsight-news.kr",
-  email: "contact@dailyinsight-news.kr",
+  email: "contact@calcitda.com",
   operator: "데일리인사이트 편집팀",
   adClient: "ca-pub-8975980143082765",
   gsc: "lw1KRUSHXzh6LrkaSsOtSr8IbpkDrBZ-1-NPm47n9Vw",
